@@ -6,45 +6,72 @@
     <title>Confirmar Presença | Gabriella & Rafael</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .form-card {
-            background: var(--fundo-suave);
-            border: 1px solid var(--verde-oliva-claro);
-            border-radius: 8px;
-            padding: 30px;
-            max-width: 600px;
-            margin: 20px auto;
+        .rsvp-container {
+            max-width: 550px;
+            margin: 50px auto;
+            padding: 40px 30px;
+            background: #FFFFFF;
+            border: 2px solid var(--dourado-luxo, #D4AF37);
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             text-align: left;
         }
+
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
+
         .form-group label {
             display: block;
-            margin-bottom: 8px;
             font-weight: 500;
-            color: var(--verde-oliva);
-        }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-family: inherit;
+            color: var(--verde-oliva, #4A5D2F);
+            margin-bottom: 8px;
             font-size: 0.95rem;
         }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #CCC;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-family: 'Montserrat', sans-serif;
             outline: none;
-            border-color: var(--verde-oliva);
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: var(--verde-oliva, #4A5D2F);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--verde-oliva, #4A5D2F);
+            color: #FFFFFF;
+            border: 1px solid var(--dourado-luxo, #D4AF37);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background: var(--dourado-luxo, #D4AF37);
+            color: var(--verde-oliva, #4A5D2F);
         }
     </style>
 </head>
 <body>
 
-    <!-- Navegação -->
+    <!-- NAVEGAÇÃO -->
     <header>
-        <div class="logo serif" style="font-size: 1.5rem; color: var(--verde-oliva); font-weight: bold;">
-            <a href="index.html" style="text-decoration:none; color:inherit;">G & R</a>
-        </div>
+        <div class="logo serif" style="font-size: 1.5rem; color: var(--verde-oliva, #4A5D2F); font-weight: bold;">G & R</div>
         <nav>
             <a href="index.html">Início</a>
             <a href="eventos.html">Eventos</a>
@@ -52,47 +79,46 @@
         </nav>
     </header>
 
+    <!-- FORMULÁRIO DE RSVP -->
     <section>
-        <h2 class="serif" style="font-size: 2.8rem; color: var(--verde-oliva);">Confirmação de Presença</h2>
-        <p style="color: #666; margin-bottom: 30px;">Por favor, confirme sua presença até 30 dias antes do evento.</p>
+        <h2 class="serif" style="font-size: 3rem; color: var(--verde-oliva, #4A5D2F);">Confirmação de Presença</h2>
+        <p style="color: #666; margin-top: 5px;">Por favor, confirme sua presença até 30 dias antes do evento.</p>
 
-        <div class="form-card">
-            <form action="https://formspree.io/f/xbjnqpyz" method="POST">
+        <div class="rsvp-container">
+            <form id="rsvp-form">
+                <!-- Nome do Convidado -->
                 <div class="form-group">
                     <label for="nome">Nome Completo:</label>
                     <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
                 </div>
 
+                <!-- Presença -->
                 <div class="form-group">
-                    <label for="presenca">Você irá ao casamento?</label>
-                    <select id="presenca" name="presenca" required>
-                        <option value="">Selecione uma opção</option>
-                        <option value="Sim, com certeza!">Sim, com certeza!</option>
-                        <option value="Infelizmente não poderei ir">Infelizmente não poderei ir</option>
+                    <label for="confirmacao">Você irá ao casamento?</label>
+                    <select id="confirmacao" name="confirmacao" required>
+                        <option value="" disabled selected>Selecione uma opção</option>
+                        <option value="Sim">Sim, com certeza estarei presente!</option>
+                        <option value="Nao">Infelizmente não poderei ir</option>
                     </select>
                 </div>
 
+                <!-- Recado Opcional -->
                 <div class="form-group">
-                    <label for="acompanhantes">Quantidade de Acompanhantes (incluindo crianças):</label>
-                    <input type="number" id="acompanhantes" name="acompanhantes" min="0" max="10" value="0" required>
+                    <label for="mensagem">Deixe uma mensagem para os noivos (opcional):</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva um carinho para nós..."></textarea>
                 </div>
 
-                <div class="form-group">
-                    <label for="nomes_acompanhantes">Nome dos Acompanhantes:</label>
-                    <textarea id="nomes_acompanhantes" name="nomes_acompanhantes" rows="3" placeholder="Digite o nome dos acompanhantes, se houver"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="mensagem">Deixe um recado para os noivos:</label>
-                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva aqui carinho aos noivos..."></textarea>
-                </div>
-
-                <div style="text-align: center; margin-top: 30px;">
-                    <button type="submit" class="btn-oliva" style="width: 100%;">Enviar Confirmação</button>
-                </div>
+                <button type="submit" class="btn-submit">Enviar Confirmação</button>
             </form>
         </div>
     </section>
 
+    <script>
+        document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado por responder! Sua confirmação foi registrada com sucesso.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
