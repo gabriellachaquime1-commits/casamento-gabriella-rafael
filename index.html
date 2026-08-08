@@ -8,19 +8,26 @@
 </head>
 <body>
 
-    <!-- Convite Inicial -->
+    <!-- CONVITE DE ENTRADA -->
     <div id="intro-screen">
         <div class="intro-card">
-            <h1 class="serif">Gabriella <span style="color:var(--dourado); font-size: 2rem;">♡</span> Rafael</h1>
-            <p style="letter-spacing: 3px; color: var(--verde-oliva); margin-top: 10px;">17 • ABRIL • 2027</p>
-            <p style="font-style: italic; color: #666; margin: 20px 0; font-size: 0.95rem;">
-                "Para que todos vejam e saibam, considerem e juntamente entendam que a mão do Senhor fez isso."<br><strong>(Isaías 41:20)</strong>
+            <h1 class="serif">Gabriella <span class="heart-icon">♡</span> Rafael</h1>
+            <p class="data-casamento">17 • ABRIL • 2027</p>
+            
+            <div class="divisor-dourado"></div>
+            
+            <p class="versiculo">
+                "Para que todos vejam e saibam, considerem e juntamente entendam que a mão do Senhor fez isso."
+                <span>Isaías 41:20</span>
             </p>
-            <button class="btn-ouro" onclick="abrirConvite()">Entrar no Site</button>
+            
+            <div class="divisor-dourado"></div>
+            
+            <button class="btn-ouro-outline" onclick="abrirConvite()">Entrar no Site</button>
         </div>
     </div>
 
-    <!-- Cabeçalho / Menu -->
+    <!-- NAVEGAÇÃO -->
     <header>
         <div class="logo serif" style="font-size: 1.5rem; color: var(--verde-oliva); font-weight: bold;">G & R</div>
         <nav>
@@ -30,20 +37,20 @@
         </nav>
     </header>
 
-    <!-- Banner Principal -->
+    <!-- BANNER PRINCIPAL -->
     <section>
-        <h2 class="serif" style="font-size: 3rem; color: var(--verde-oliva);">Gabriella & Rafael</h2>
-        <p style="letter-spacing: 2px; margin-bottom: 30px;">NOSSO CASAMENTO</p>
+        <h2 class="serif" style="font-size: 3.5rem; color: var(--verde-oliva);">Gabriella & Rafael</h2>
+        <p style="letter-spacing: 2px; margin: 10px 0 40px 0; color: #666;">NOSSO CASAMENTO</p>
         
         <div style="margin-top: 20px;">
-            <a href="rsvp.html" class="btn-oliva">Confirmar Presença</a>
+            <a href="rsvp.html" class="btn-ouro-outline" style="text-decoration:none;">Confirmar Presença</a>
         </div>
     </section>
 
-    <!-- Contagem Regressiva -->
-    <section>
-        <h3 class="serif" style="font-size: 2rem; color: var(--dourado);">Contagem Regressiva</h3>
-        <p style="color: #666; font-size: 0.9rem;">Para o grande dia (17/04/2027 às 17:00)</p>
+    <!-- CONTAGEM REGRESSIVA -->
+    <section style="background-color: #F8F7F4; border-radius: 8px; padding: 60px 20px; margin: 40px auto; border: 1px solid #E8E5DF;">
+        <h3 class="serif" style="font-size: 2.2rem; color: var(--verde-oliva);">Contagem Regressiva</h3>
+        <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">Para o grande dia (17/04/2027 às 17:00)</p>
         
         <div class="countdown-container">
             <div class="time-box"><span id="days">00</span><p>Dias</p></div>
@@ -53,21 +60,20 @@
         </div>
     </section>
 
-    <!-- Mensagem Final -->
-    <section style="background-color: var(--fundo-suave); border-radius: 8px; margin-bottom: 50px; padding: 40px 20px;">
-        <p class="serif" style="font-size: 1.3rem; color: var(--verde-oliva); font-style: italic;">
+    <!-- MENSAGEM FINAL -->
+    <section>
+        <p class="serif" style="font-size: 1.4rem; color: var(--verde-oliva); font-style: italic; max-width: 800px; margin: 0 auto; line-height: 1.6;">
             "Estamos muito felizes em compartilhar esse momento com você. Obrigada por fazer parte da nossa história."
         </p>
     </section>
 
     <script src="js/countdown.js"></script>
-
     <script>
         function abrirConvite() {
             const intro = document.getElementById('intro-screen');
-            intro.style.transform = 'translateY(-100%)';
             intro.style.opacity = '0';
-            setTimeout(() => intro.style.display = 'none', 1200);
+            intro.style.transform = 'scale(0.98)'; 
+            setTimeout(() => intro.style.display = 'none', 800);
         }
     </script>
 </body>
