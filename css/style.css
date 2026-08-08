@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
 :root {
-    /* NOVA PALETA DE CORES MAIS SOFISTICADA */
-    --verde-oliva-fundo: #4A5D2F; /* Um oliva ligeiramente mais escuro para o fundo */
-    --verde-oliva-prime: #556B2F; /* Oliva original para elementos secundários */
-    --dourado-claro: #E6D7B3; /* Dourado suave para textos sobre o oliva */
-    --dourado-forte: #C5A059; /* Dourado original para bordas e destaques */
+    --verde-oliva: #4A5D2F;
+    --verde-oliva-suave: #2E3B1C;
+    --dourado-luxo: #D4AF37;
+    --dourado-claro: #F4E8C1;
+    --marfim-fundo: #FAFAFA;
     --branco: #FFFFFF;
-    --fundo-claro-site: #FAFAFA;
-    --texto-escuro-site: #2C3531;
+    --texto-escuro: #2C3531;
 }
 
 * {
@@ -19,8 +18,8 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--branco);
-    color: var(--texto-escuro-site);
+    background-color: var(--marfim-fundo);
+    color: var(--texto-escuro);
     overflow-x: hidden;
 }
 
@@ -29,7 +28,7 @@ h1, h2, h3, .serif {
 }
 
 /* ============================================================
-   ESTILIZAÇÃO DA NOVA TELA DE INTRODUÇÃO (SUA NOVA ARTE)
+   ESTILIZAÇÃO DO CONVITE INICIAL (SOFISTICADO & LEGI'VEL)
    ============================================================ */
 #intro-screen {
     position: fixed;
@@ -37,137 +36,131 @@ h1, h2, h3, .serif {
     left: 0;
     width: 100%;
     height: 100%;
-    /* FUNDO VERDE OLIVA COM TEXTURA DE LINHO DELICADA */
-    background-color: var(--verde-oliva-fundo);
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IihoZWlnaHQ9IjQiIHZpZXdCb3g9IjAgMCA0IDQiPjxnIGZpbGwtcmVsZT0iZXZlbm9kZCI+PGcgZmlsbD0iI2FmYmZiZiIgZmlsbC1vcGFjaXR5PSIwLjA1Ij48cGF0aCBkPSJNMCAwaDF2MUgwVjB6TTEgMWgxdjFIMVYxeU0yIDJoMXYxSDJWMnpNMyAzaDF2MUgzVjN6TTAgMmgxdjFIMFYyek0xIDNoMXYxSDFWM3pNMiAwaDF2MUgyVjB6TTMgMWgxdjFIM1YxeiIvPjwvZz48L2c+PC9zdmc+');
+    background-color: #F8F7F4;
     z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    transition: transform 1.2s ease-in-out, opacity 1s ease;
     padding: 20px;
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .intro-card {
-    /* BORDA DUPLA DOURADA SOFISTICADA */
-    border: 4px double var(--dourado-forte);
-    padding: 60px 40px;
-    max-width: 550px;
+    background: var(--branco);
+    border: 2px solid var(--dourado-luxo);
+    outline: 6px solid rgba(212, 175, 55, 0.15);
+    outline-offset: -12px;
+    padding: 50px 35px;
+    max-width: 520px;
     width: 100%;
-    background: rgba(85, 107, 47, 0.3); /* Fundo levemente translúcido dentro do card */
-    backdrop-filter: blur(2px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
     position: relative;
+    border-radius: 4px;
 }
 
-/* DETALHES DOURADOS NOS CANTOS (OPCIONAL, MAS ADICIONA CHARME) */
+/* Cantoneiras Elegantes */
 .intro-card::before, .intro-card::after {
-    content: '';
+    content: '✦';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--dourado-forte);
+    color: var(--dourado-luxo);
+    font-size: 1.2rem;
 }
-
-.intro-card::before { top: 10px; left: 10px; border-right: none; border-bottom: none; }
-.intro-card::after { bottom: 10px; right: 10px; border-left: none; border-top: none; }
-
+.intro-card::before { top: 15px; left: 20px; }
+.intro-card::after { bottom: 15px; right: 20px; }
 
 .intro-card h1 {
-    font-size: 3.2rem;
-    /* LETRAS DOURADAS */
-    color: var(--dourado-claro);
-    margin-bottom: 10px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    font-size: 3rem;
+    color: var(--verde-oliva);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
 }
 
 .intro-card .heart-icon {
-    color: var(--dourado-forte);
-    font-size: 2.2rem;
-    margin: 0 10px;
+    color: var(--dourado-luxo);
+    font-size: 1.8rem;
+    vertical-align: middle;
+    margin: 0 8px;
 }
 
-.intro-card p.data-casamento {
-    letter-spacing: 4px;
-    /* LETRAS DOURADAS */
-    color: var(--dourado-claro);
+.intro-card .data-casamento {
+    letter-spacing: 5px;
+    color: var(--dourado-luxo);
     text-transform: uppercase;
-    font-size: 1rem;
-    margin-bottom: 25px;
-    font-weight: 300;
-}
-
-.intro-card p.versiculo {
-    font-style: italic;
-    /* LETRAS DOURADAS SUAVES */
-    color: var(--dourado-claro);
-    margin: 25px auto;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    max-width: 90%;
-    font-weight: 300;
-}
-
-.intro-card p.versiculo strong {
-    color: var(--dourado-forte);
-    font-weight: 600;
-}
-
-/* BOTÃO ENTRAR: FUNDO TRANSPARENTE, BORDA E LETRAS DOURADAS */
-.btn-ouro-outline {
-    background: transparent;
-    border: 1px solid var(--dourado-forte);
-    color: var(--dourado-forte);
-    padding: 15px 40px;
     font-size: 0.9rem;
-    letter-spacing: 3px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.divisor-dourado {
+    width: 60px;
+    height: 1px;
+    background: var(--dourado-luxo);
+    margin: 20px auto;
+}
+
+.intro-card .versiculo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--verde-oliva-suave);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin: 20px auto;
+    max-width: 90%;
+}
+
+.intro-card .versiculo span {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--dourado-luxo);
+    margin-top: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* BOTÃO DOURADO */
+.btn-ouro-outline {
+    background: var(--verde-oliva);
+    color: var(--branco) !important;
+    border: 1px solid var(--dourado-luxo);
+    padding: 14px 35px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
     cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 20px;
+    margin-top: 15px;
     transition: all 0.3s ease;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    border-radius: 2px;
+    box-shadow: 0 4px 10px rgba(74, 93, 47, 0.2);
 }
 
 .btn-ouro-outline:hover {
-    background: var(--dourado-forte);
-    color: var(--verde-oliva-fundo);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background: var(--dourado-luxo);
+    color: var(--verde-oliva) !important;
+    border-color: var(--verde-oliva);
 }
 
-/* ============================================================
-   ESTILOS DO RESTANTE DO SITE (MANTIDOS/AJUSTADOS)
-   ============================================================ */
-
-.btn-oliva-solid {
-    background: var(--verde-oliva-prime);
-    color: var(--branco);
-    border: none;
-    padding: 14px 32px;
-    font-size: 0.9rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 4px;
-    text-decoration: none;
-    display: inline-block;
-}
-
+/* ESTILOS DO RESTANTE DO SITE */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background: rgba(255, 255, 255, 0.98);
+    background: var(--branco);
     border-bottom: 1px solid #eee;
 }
 
 header nav a {
     margin: 0 15px;
     text-decoration: none;
-    color: var(--texto-escuro-site);
+    color: var(--texto-escuro);
     font-size: 0.85rem;
     text-transform: uppercase;
 }
@@ -187,17 +180,16 @@ section {
 }
 
 .time-box {
-    background: var(--fundo-claro-site);
-    border: 1px solid var(--verde-oliva-claro);
+    background: var(--branco);
+    border: 1px solid var(--dourado-luxo);
     padding: 20px;
     min-width: 100px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: 4px;
 }
 
 .time-box span {
     display: block;
     font-size: 2.2rem;
     font-weight: 600;
-    color: var(--verde-oliva-prime);
+    color: var(--verde-oliva);
 }
