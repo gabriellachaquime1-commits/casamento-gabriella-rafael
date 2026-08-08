@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Presença | Gabriella & Rafael</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .form-card {
+            background: var(--fundo-suave);
+            border: 1px solid var(--verde-oliva-claro);
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--verde-oliva);
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--verde-oliva);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegação -->
+    <header>
+        <div class="logo serif" style="font-size: 1.5rem; color: var(--verde-oliva); font-weight: bold;">
+            <a href="index.html" style="text-decoration:none; color:inherit;">G & R</a>
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="eventos.html">Eventos</a>
+            <a href="rsvp.html">RSVP</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2 class="serif" style="font-size: 2.8rem; color: var(--verde-oliva);">Confirmação de Presença</h2>
+        <p style="color: #666; margin-bottom: 30px;">Por favor, confirme sua presença até 30 dias antes do evento.</p>
+
+        <div class="form-card">
+            <form action="https://formspree.io/f/xbjnqpyz" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="presenca">Você irá ao casamento?</label>
+                    <select id="presenca" name="presenca" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="Sim, com certeza!">Sim, com certeza!</option>
+                        <option value="Infelizmente não poderei ir">Infelizmente não poderei ir</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="acompanhantes">Quantidade de Acompanhantes (incluindo crianças):</label>
+                    <input type="number" id="acompanhantes" name="acompanhantes" min="0" max="10" value="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nomes_acompanhantes">Nome dos Acompanhantes:</label>
+                    <textarea id="nomes_acompanhantes" name="nomes_acompanhantes" rows="3" placeholder="Digite o nome dos acompanhantes, se houver"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Deixe um recado para os noivos:</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva aqui carinho aos noivos..."></textarea>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <button type="submit" class="btn-oliva" style="width: 100%;">Enviar Confirmação</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
